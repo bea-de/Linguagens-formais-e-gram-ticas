@@ -1,1 +1,1 @@
-# Linguagens-formais-e-gram-ticas
+# Linguagens-formais-e-gramticas
