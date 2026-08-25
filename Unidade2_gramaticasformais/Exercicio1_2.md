@@ -133,7 +133,7 @@ Portanto:
 
 $$
 abba \in \Sigma^*
-$$
+$$ 
 
 ### Como se lê?
 
