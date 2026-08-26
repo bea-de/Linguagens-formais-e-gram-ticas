@@ -341,12 +341,25 @@ $$
 Determine se as afirmações são **verdadeiras ou falsas**:
 
 1. $0 \in \Sigma$
-2. $1 \in \Sigma$
-3. $01 \in \Sigma$
-4. $01 \in \Sigma^*$
-5. $2 \in \Sigma$
-6. $101 \in \Sigma^*$
+R: Verdadeiro,	$0$ é um dos símbolos que compõem o alfabeto 
+Σ.
 
+2. $1 \in \Sigma$
+R: Verdadeiro,	$1$ é o outro símbolo que compõe 
+Σ.
+
+3. $01 \in \Sigma$
+R:Verdadeiro, Σ contém apenas símbolos individuais (elementos de comprimento 1). 01 é uma cadeia (string) de comprimento 2, formada pela concatenação de dois símbolos — não é um elemento do alfabeto em si.
+
+4. $01 \in \Sigma^*$
+R:Verdadeiro, Σ∗ é o conjunto de **todas as cadeias finitas** (incluindo a cadeia vazia ε). formadas por símbolos de 
+Σ. Como `01` é formada apenas pelos símbolos `0` e `1`, ela pertence a Σ∗.
+
+5. $2 \in \Sigma$
+R: Falso, O alfabeto foi definido explicitamente como Σ = { 0 , 1 } Σ={0,1}; o símbolo 2 não faz parte desse conjunto.
+
+6. $101 \in \Sigma^*$
+R: Verdadeiro, 101 é uma cadeia finita composta exclusivamente por símbolos de Σ Σ (1, 0, 1), logo pertence ao fecho de Kleene Σ ∗ Σ ∗ .
 Justifique cada resposta.
 
 ---
