@@ -1,6 +1,6 @@
 # Exercícios Comentados — Aulas 01 e 02
 
-## Linguagens Formais, Alfabeto, Linguagens e Gramáticas
+## Linguagens Formais, Alfabeto, Linguagens e Gramáticas 
 
 **Disciplina:** Linguagens Formais e Autômatos
 **Objetivo:** revisar os conceitos fundamentais de **alfabeto, palavras, linguagens e gramáticas**, desenvolvendo também a capacidade de interpretar e ler a notação matemática.
