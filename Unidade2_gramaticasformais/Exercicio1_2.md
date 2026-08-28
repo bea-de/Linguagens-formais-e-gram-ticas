@@ -2,7 +2,7 @@
 
 ## Linguagens Formais, Alfabeto, Linguagens e Gramáticas 
 
-**Disciplina:** Linguagens Formais e Autômatos
+**Disciplina:** Linguagens Formais e Autômatos.
 **Objetivo:** revisar os conceitos fundamentais de **alfabeto, palavras, linguagens e gramáticas**, desenvolvendo também a capacidade de interpretar e ler a notação matemática.
 
 > **Orientação ao estudante:** primeiro leia e compreenda o exercício comentado. Em seguida, tente resolver o exercício proposto sem consultar o gabarito. Ao final do material, confira suas respostas.
