@@ -1811,7 +1811,7 @@ R: Não. Assim que aplicamos 𝑆 → 𝑏 S→b, a derivação termina (não so
 
 Escreva a derivação completa de `aaaab`.
 R: S⇒aS⇒aaS⇒aaaS⇒aaaaS⇒aaaab 
-(aplicamos 𝑆 → 𝑎 𝑆 S→aS quatro vezes, depois 𝑆 → 𝑏 S→b uma vez)
+(aplicamos 𝑆 → 𝑎 𝑆 S→aS quatro vezes, depois 𝑆 → 𝑏 S→b uma vez).
 
 ### 7.
 
