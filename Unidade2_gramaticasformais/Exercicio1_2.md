@@ -464,13 +464,23 @@ $$
 
 Determine se cada palavra pertence à linguagem:
 
-1. $0 \in L$
-2. $01 \in L$ 
-3. $0111 \in L$
-4. $10 \in L$
-5. $111 \in L$
-6. $011 \in L$
+1. $0 \in L$  
+R: Verdadeiro (0 é um dos elementos do conjunto)
 
+2. $01 \in L$ 
+R: Verdadeiro (01 é um dos elementos do conjunto)
+
+3. $0111 \in L$
+R: Verdadeiro (0111 é um dos elementos do conjunto)
+
+4. $10 \in L$
+R: Falso (10 não aparece na lista; note que a ordem dos símbolos importa — 10 ≠ 01 10  =01)
+
+5. $111 \in L$
+R:Falso (111 não está no conjunto; é diferente de 0111, que começa com 0)
+
+6. $011 \in L$
+R: Verdadeiro (011 é um dos elementos do conjunto)
 ---
 
 # 5. Descrevendo uma linguagem por padrão
@@ -573,9 +583,16 @@ L = {b^n \mid n \geq 1}
 $$
 
 1. Escreva as cinco primeiras palavras.
+R: b,bb,bbb,bbbb,bbbbb (correspondendo a 𝑛 = 1 , 2 , 3 , 4 , 5 n=1,2,3,4,5)
+
 2. Explique o significado de $b^n$.
+R: b n representa a letra 𝑏 b repetida 𝑛 n vezes, concatenada consigo mesma. Por exemplo, 𝑏 3 = 𝑏 𝑏 𝑏 b 3 =bbb (três 𝑏 b's em sequência). É uma notação compacta para expressar repetição de um símbolo, muito usada em linguagens formais.
+
 3. A palavra `bbbbbb` pertence à linguagem?
+R: Sim. bbbbbb tem 6 letras 𝑏 b, ou seja, corresponde a 𝑏 6 b 6 . Como 𝑛 ≥ 1 n≥1, e 6 ≥ 1 6≥1, essa palavra satisfaz a condição e pertence a 𝐿 L.
+
 4. A palavra vazia ($\varepsilon$) pertence à linguagem?
+R: Não. A palavra vazia corresponderia a 𝑛 = 0 n=0 (zero ocorrências de 𝑏 b), mas a definição exige 𝑛 ≥ 1 n≥1. Como o menor valor permitido é 𝑛 = 1 n=1 (ou seja, a palavra 𝑏 b), a palavra vazia fica fora da linguagem. Se a definição fosse 𝑛 ≥ 0 n≥0, aí sim 𝜀 ε pertenceria.
 
 ---
 
@@ -670,19 +687,26 @@ Explique, com suas próprias palavras, a diferença entre:
 $$
 L=\emptyset
 $$
+R: L=∅ — o conjunto vazio. Essa linguagem não contém absolutamente nenhuma palavra, nem mesmo a palavra vazia. É como uma caixa completamente vazia, sem nada dentro — nenhum elemento, nenhuma palavra, nada.
+
 
 ### B
 
 $$
 L={\varepsilon}
 $$
+R: L={ε} — o conjunto que contém a palavra vazia. Essa linguagem contém exatamente uma palavra: a palavra vazia 𝜀 ε (a "palavra" que não tem nenhum símbolo, tem comprimento zero). É como uma caixa que não está vazia — ela tem um item dentro, e esse item é "nada" (a sequência vazia de símbolos).
 
 Depois responda:
 
 1. Qual delas possui uma palavra?
-2. Qual delas não possui nenhuma palavra?
-3. Qual é o comprimento da palavra $\varepsilon$?
+R:B={ε} — ela possui exatamente uma palavra (a palavra vazia).
 
+2. Qual delas não possui nenhuma palavra?
+R: A=∅ — o conjunto vazio não tem nenhum elemento.
+
+3. Qual é o comprimento da palavra $\varepsilon$?
+R: O comprimento é 0 (zero). A palavra vazia é definida como a sequência sem nenhum símbolo, então ∣ 𝜀 ∣ = 0 ∣ε∣=0.
 ---
 
 # 7. Estrutura de uma gramática
@@ -788,11 +812,19 @@ $$
 Identifique:
 
 1. O conjunto de variáveis.
-2. O conjunto de terminais.
-3. O conjunto de produções.
-4. O símbolo inicial.
-5. Qual palavra pode ser gerada por essa gramática?
+R: {S,A} — são os símbolos que ainda podem ser substituídos/expandidos.
 
+2. O conjunto de terminais.
+R: {0,1} — são os símbolos que aparecem na palavra final, e que não podem mais ser substituídos.
+
+3. O conjunto de produções.
+R: P={S→0A, A→1} — são as regras que dizem como cada variável pode ser reescrita.
+
+4. O símbolo inicial.
+R: S — é de onde toda derivação começa.
+
+5. Qual palavra pode ser gerada por essa gramática?
+R: A palavra gerada é 01
 ---
 
 # 8. Como ler e aplicar uma produção
@@ -1033,7 +1065,10 @@ aaab
 $$
 
 **Escreva todos os passos da derivação.**
-
+R: 1. $S \Rightarrow aS$ (aplicando $S \rightarrow aS$)
+2. $aS \Rightarrow aaS$ (aplicando $S \rightarrow aS$)
+3. $aaS \Rightarrow aaaS$ (aplicando $S \rightarrow aS$)
+4. $aaaS \Rightarrow aaab$ (aplicando $S \rightarrow b$)
 ---
 
 # 10. Identificando palavras geradas por uma gramática
@@ -1192,7 +1227,18 @@ Determine se cada palavra pode ser gerada:
 6. `1001`
 
 Para as palavras que podem ser geradas, apresente a derivação completa.
-
+1. `1` → **Sim**
+$$S \Rightarrow 1$$
+2. `01` → **Sim**
+$$S \Rightarrow 0S \Rightarrow 01$$
+3. `001` → **Sim**
+$$S \Rightarrow 0S \Rightarrow 00S \Rightarrow 001$$
+4. `0001` → **Sim**
+$$S \Rightarrow 0S \Rightarrow 00S \Rightarrow 000S \Rightarrow 0001$$
+5. `101` → **Não**
+(o símbolo 1 só pode aparecer no final da derivação, encerrando-a; como há símbolos depois do 1 nessa palavra, ela não pode ser gerada)
+6. `1001` → **Não**
+(mesmo motivo: assim que se aplica $S \rightarrow 1$ a derivação termina, mas a palavra continua depois do primeiro 1)
 ---
 
 # Gabarito Comentado
@@ -1739,29 +1785,38 @@ Responda sem consultar o gabarito:
 ### 1.
 
 A palavra `b` pode ser gerada?
+R: Sim. 𝑆 ⇒ 𝑏 S⇒b (aplicando direto 𝑆 → 𝑏 S→b).
 
 ### 2.
 
 A palavra `ab` pode ser gerada?
+R: Sim.𝑆⇒𝑎𝑆⇒𝑎𝑏S⇒aS⇒ab
 
 ### 3.
 
 A palavra `aab` pode ser gerada?
+R: Sim.𝑆⇒𝑎𝑆⇒𝑎𝑎𝑆⇒𝑎𝑎𝑏S⇒aS⇒aaS⇒aab
 
 ### 4.
 
 A palavra `aaab` pode ser gerada?
+R: Sim.𝑆⇒𝑎𝑆⇒𝑎𝑎𝑆⇒𝑎𝑎𝑎𝑆⇒𝑎𝑎𝑎𝑏S⇒aS⇒aaS⇒aaaS⇒aaab
 
 ### 5.
 
 A palavra `aba` pode ser gerada?
+R: Não. Assim que aplicamos 𝑆 → 𝑏 S→b, a derivação termina (não sobra 𝑆 S para continuar). Como b aparece no meio da palavra e depois vem outro a, seria impossível continuar gerando símbolos após o b. Além disso, o b só pode aparecer no final da palavra, nunca no meio.
 
 ### 6.
 
 Escreva a derivação completa de `aaaab`.
+R: S⇒aS⇒aaS⇒aaaS⇒aaaaS⇒aaaab 
+(aplicamos 𝑆 → 𝑎 𝑆 S→aS quatro vezes, depois 𝑆 → 𝑏 S→b uma vez)
 
 ### 7.
 
 Descreva, com suas palavras, o padrão das palavras geradas por essa gramática.
+
+ R: A gramática gera todas as palavras formadas por um ou mais a's seguidos de exatamente um b no final — ou seja, palavras da forma 𝑎 𝑛 𝑏 a n b, com 𝑛 ≥ 1 n≥1. Isso acontece porque cada aplicação de 𝑆 → 𝑎 𝑆 S→aS adiciona um a e mantém a derivação aberta, enquanto 𝑆 → 𝑏 S→b é a única forma de encerrar, sempre colocando b como último símbolo.
 
 > **Dica:** observe o que acontece quando aplicamos várias vezes $S\rightarrow aS$ e, finalmente, utilizamos $S\rightarrow b$.
