@@ -4,7 +4,7 @@ Aula 20/10/2026 | Professora Kadidja Valéria | Inteligência artificial
 
 **Disciplina:** Linguagens Formais e Autômatos | ciência da Computação
 
-**Estudante:** Paulo Roberto Ferreira Brito | **Turma:** [turma]
+**Estudante:** Beatriz Nevis Miranda | **Turma:** [N1- noturna]
 
 Realize os exercícios 2.3, 2.4 e 2.5 do Capítulo 2 sobre agentes inteligentes. Analise a racionalidade, descreva ambientes de tarefa por meio do modelo PEAS e explique os conceitos com suas próprias palavras. Utilize o capítulo disponibilizado e justifique suas respostas.
 
@@ -294,7 +294,7 @@ Resposta:
 
 ## Entrega e avaliação
 Confira: identificação; nove análises no item 2.3; sete casos completos no item 2.4; dez conceitos no item 2.5; síntese; referências.
-Nome sugerido: `PauloFerreira_Atividade_AgentesInteligentes`. Prazo e envio conforme orientação da professora.
+Nome sugerido: `Beatriz Miranda_AgentesInteligentes`. Prazo e envio conforme orientação da professora.
 
 ## Referências
 Material-base: Capítulo 2 — Agentes inteligentes, disponibilizado para a aula de 19/10/2026.
