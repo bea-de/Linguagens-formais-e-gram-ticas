@@ -1,1 +1,231 @@
+Atividade sobre agentes inteligentes
+Aula 20/10/2026 | Professora Kadidja Valéria | Inteligência artificial
 
+Disciplina: Linguagens Formais e Automáticas | ciência da computação
+
+Estudante: Paulo Roberto Ferreira Brito | Turma: [turma]
+
+Realize os exercícios 2.3, 2.4 e 2.5 do Capítulo 2 sobre agentes inteligentes. Analise a racionalidade, descreva ambientes de tarefa por meio do modelo PEAS e explique os conceitos com suas próprias palavras. Utilize o capítulo disponibilizado e justifique suas respostas.
+
+Modalidade sugerida: individual com consulta. Tempo estimado: 2h30. Prazo: conforme orientação da professora.
+
+Preparação
+Leia os tópicos sobre racionalidade, ambientes e estrutura dos agentes, especialmente a Seção 2.3.2.
+
+Exercício 2.3
+Para cada afirmação, indique V ou F, justifique e forneça exemplo ou contraexemplo. Explicite as hipóteses utilizadas.
+
+um. Um agente que detecta apenas informações parciais sobre o estado não pode ser perfeitamente racional.
+Julgamento: F
+Justificativa: A racionalidade depende de maximizar o desempenho esperado com base nas percepções acumuladas até o momento, e não em omnisapiência. Um agente pode tomar a melhor decisão possível em caso de incerteza ou falta de informação completa.
+Exemplo ou contraexemplo: Um carro independente trafegando em uma via com neblina densa ainda pode ser perfeitamente racional ao adotar uma direção defensiva e prudente com base no que seus sensores fornecem captar.
+b. Existem ambientes de tarefa nos quais nenhum agente reativo puro pode se comportar racionalmente.
+Julgamento: V
+Justificativa: Agentes reativos puros tomam decisões baseadas apenas na percepção atual, sem manter um estado interno para rastrear aspectos do mundo que não estão visíveis no momento (ambientes parcialmente observáveis ​​ou não observáveis).
+Exemplo ou contraexemplo: Em um ambiente parcialmente observável (como o jogo de Pôquer), um agente reativo puro que não considera o histórico das jogadas e cartas ocultas ocasionais tomará decisões irracionais no longo prazo.
+c. Existe um ambiente de tarefa em que todo agente é racional.
+Julgamento: V
+Justificativa: Em um ambiente estático, totalmente previsível e trivial — onde há apenas uma ação possível ou todas as ações conduzem exatamente ao mesmo resultado ideal —, qualquer ação escolhida atinge o objetivo máximo.
+Exemplo ou contraexemplo: Um ambiente de tarefa onde o agente está em uma sala sem saída com apenas um botão para iniciar, e qualquer ação gera a recompensa máxima.
+d. A entrada para o programa de agente é a mesma que a entrada para a função de agente.
+Julgamento: F
+Justificativa: A função de agente é um conceito abstrato que mapeia o histórico completo de percepções para uma ação. O programa de agente roda fisicamente na arquitetura e recebe como entrada apenas a percepção atual a cada ciclo de relógio, mantendo o histórico internamente.
+Exemplo ou contraexemplo: Enquanto a função matemática está disponível toda a sequência de percepções, o programa de software recebe apenas a percepção da iteração atual.
+e. Toda função de agente é implementável por uma combinação de programa/máquina.
+Julgamento: F
+Justificativa: Algumas funções de agente excluem um histórico infinito de percepções ou um poder de computação infinito que excede a capacidade física de qualquer máquina real.
+Exemplo ou contraexemplo: Uma função matemática que calcula a resposta ótima para um problema de xadrez com profundidade e ramificações infinitas em tempo real.
+f. Suponha que um agente selecione sua ação uniformemente ao acaso do conjunto de ações possíveis. Existe um ambiente de tarefa determinista em que esse agente é racional.
+Julgamento: V
+Justificativa: Se o ambiente for extremamente restrito, onde todas as ações possíveis do conjunto levam ao mesmo estado de sucesso ótimo, a escolha solicitada sempre será bem-sucedida.
+Exemplo ou contraexemplo: Um robô em uma sala onde qualquer movimento (frente, trás, esquerda, direita) resulta na conclusão bem-sucedida de uma tarefa simples de limpeza de um único ponto exato sob ele.
+g. É possível que um dado agente seja perfeitamente racional em dois ambientes de tarefa distintos.
+Julgamento: V
+Justificativa: Se dois ambientes compartilharem exatamente as mesmas dinâmicas de transição, funções de recompensa e estruturas de percepção/ação, o mesmo agente poderá maximizar seu desempenho em ambos.
+Exemplo ou contraexemplo: Um agente aspirador de pó projetado para operar perfeitamente em duas salas idênticas em dimensões e disposição de obstáculos.
+h. Todo agente é racional em um ambiente não observável.
+Julgamento: F
+Justificativa: Em ambientes não observáveis, o agente não tem dados sensoriais do estado. No entanto, se ele escolher ações sem estratégias ou ignorar o estado interno de opiniões, ele falhará em atingir seus objetivos, tornando-se irracional.
+Exemplo ou contraexemplo: Um robô cego e sem sensores que tenta navegar por um campo minado aleatoriamente e explodindo; ele não é racional.
+eu. Um agente jogador de pôquer perfeitamente racional nunca perde.
+Julgamento: F
+Justificativa: O pôquer é um jogo de informação incompleta e estocástico (envolve classificação/probabilidade nas cartas). A racionalidade maximiza o ganho esperado com base nas probabilidades, mas não impede perdas pontuais decorrentes da variância estatística.
+Exemplo ou contraexemplo: Um jogador profissional de pôquer (racional) pode perder uma mão devido a uma carta convidada que o oponente recebe no river.
+Exercício 2.4
+Para cada caso, delimite o agente, preencha o PEAS e justifique todas as classificações. Considerar Titã como cenário hipotético do exercício.
+
+Caso 1 — Jogar futebol.
+Agente aplicado: Jogador robótico independente
+Objetivo e hipóteses: Marcar mais gols que o adversário respeitando as regras do jogo; assuma-se comunicação estável e campo padronizado.
+P — Medida de desempenho: Número de gols marcados, faltas evitadas, posse de bola e vitória na partida.
+E — Ambiente: Campo de futebol, bola, companheiros e adversários.
+A — Atuadores: Pernas/pés mecânicos para rampa e movimentação, módulos de comunicação sonora/sem fio.
+S — Sensores: Câmeras de visão computacionais, giroscópios e sensores de proximidade.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Parcialmente observável	O agente não vê o campo inteiro de uma vez e tem o posicionamento oculto/encoberto de oponentes.
+Número de agentes	Multiagente (competitivo e cooperativo)	Envolver equipe própria (cooperação) e adversários (competição).
+Previsibilidade	Estocástico	As respostas dos adversários e o comportamento físico da bola geram incertezas.
+Dependência entre	Sequencial	As ações atuais impactam diretamente as jogadas e o placar futuro.
+Mudança durante a carteira	Dinâmico	O jogo continua fluindo e mudando enquanto o agente processa sua decisão de decisão.
+tê dos elementos	Contínuo	O tempo, as posições espaciais e a força dos movimentos de variação de forma contínua.
+Conhecimento do funcionamento	conhecido	As regras da física e do futebol são conhecidas pelo projeto do agente.
+Caso 2 — Explorar os oceanos costados de Titã.
+Agente aplicado: Sonda submersível autônoma
+Objetivo e hipóteses: Mapear o fundo oceânico, coletar amostras de metano líquido e identificar bioassinaturas; assuma condições extremas de pressão e temperatura.
+P — Medida de desempenho: Volume de dados científicos coletados, integridade estrutural da sonda e diversidade de amostras.
+E — Ambiente: Oceano barreira de Titã, correntes líquidas, fundo rochoso e obstáculos submersos.
+A — Atuadores: Propulsores, braço mecânico articulado e brocas de coleta.
+S — Sensores: Sonar, câmeras de alta profundidade, medições e espectrômetros químicos.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Parcialmente observável	A visibilidade na água/metano denso e escuro é limitada ao alcance da luz/sonar.
+Número de agentes	Agente único	A missão depende principalmente da sonda operando de forma autônoma.
+Previsibilidade	Estocástico	Correntes subterrâneas desconhecidas e ondas mecânicas tornam o ambiente imprevisível.
+Dependência entre	Sequencial	Uma manobra errada de navegação pode destruir a sonda ou imperá-la permanentemente.
+Mudança durante a carteira	Dinâmico	O ambiente muda continuamente devido a fluxos de fluidos e instabilidade geológica.
+tê dos elementos	Contínuo	Variáveis ​​físicas como temperatura, pressão, coordenadas e tempo são contínuas.
+Conhecimento do funcionamento	Desconhecido	A geologia e as correntes específicas do oceano de Titã são inicialmente desconhecidas.
+Caso 3 — Comprar livros usados ​​de IA na Internet.
+Agente aplicado: Robô de compras (crawler/bot financeiro)
+Objetivo e hipóteses: Adquirir livros de IA pelo menor preço total (incluindo frete) em bom estado; assume-se disponibilidade de sites de e-commerce.
+P — Medida de desempenho: Economia financeira obtida, qualidade do livro adquirido e tempo de transação.
+E — Ambiente: Sites de e-commerce, sebos virtuais e APIs de livrarias.
+A — Atuadores: Scripts de requisição HTTP, preenchimento de formulários de compra e envio de pagamento digital.
+S — Sensores: Conexão de rede, analisadores HTML de páginas web e APIs de inventário.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Parcialmente observável	O estoque de terceiros e livros que podem surgir ou esgotar a qualquer momento não são totalmente visíveis.
+Número de agentes	Multiagente (competitivo)	Outros compradores e robôs competem pelos mesmos livros raros em promoção.
+Previsibilidade	Estocástico	Os preços mudam e os concorrentes podem comprar o livro antes da finalização.
+Dependência entre	Sequencial	Decisões de esperar o preço baixar ou comprar afetam negativamente o sucesso final.
+Mudança durante a carteira	Semidinâmico	O ambiente muda com o tempo (os preços mudam), mas não necessariamente enquanto o algoritmo processa uma linha de código específica.
+tê dos elementos	Discreto	A contagem de itens, o preço em centavos e as páginas de produtos são representados discretamente.
+Conhecimento do funcionamento	conhecido	Como regras de funcionamento da internet, protocolos web e plataformas são conhecidos.
+Caso 4 — Jogar uma partida de tênis.
+Agente aplicado: Jogador humano ou robô humanóide competidor
+Objetivo e hipóteses: Vencer o set/partida marcando pontos através de jogadas válidas; assume-se quadra oficial e oponente ativo.
+P — Medida de desempenho: Número de jogos e sets vencidos, taxa de erros não provocados e vitória na partida.
+E — Ambiente: Quadra de tênis, rede, raquete, bola e adversário.
+A — Atuadores: Braços e pernas para rebatida e deslocamento em quadra.
+S — Sensores: visão humana/câmeras e sistema vestibular/propriocepção.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Completamente observável	O agente enxerga a quadra inteira, a posição da bola e do adversário o tempo todo.
+Número de agentes	Multiagente (competitivo)	Envolva um oponente direto disputando o mesmo objetivo de vitória.
+Previsibilidade	Estocástico	Os efeitos do vento, o efeito aplicado na bola pelo oponente e os ressaltos geram incerteza.
+Dependência entre	Sequencial	Cada rebatida define a próxima jogada e afeta a estratégia do oponente.
+Mudança durante a carteira	Dinâmico	A bola se move rapidamente enquanto o jogador planeja o golpe.
+tê dos elementos	Contínuo	Trajetória da bola, tempo, força e posições espaciais ocorrem em espectro contínuo.
+Conhecimento do funcionamento	conhecido	As leis físicas do movimento da bola e as regras do tênis são conhecidas.
+Caso 5 — Praticar tênis contra uma parede.
+Agente aplicado: Jogador solitário (humano ou robô)
+Objetivo e hipóteses: Manter a bola em movimento contínuo rebatendo-a na parede; assume-se parede plana e rebote previsível.
+P — Medida de desempenho: Número de rebatidas consecutivas sem deixar a bola cair e precisão dos golpes.
+E — Ambiente: Parede de treino, piso da quadra, raquete e bola.
+A — Atuadores: Movimentos corporais e balanço da raquete.
+S — Sensores: Visão e percepção espacial da trajetória da bola.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Completamente observável	Todo o espaço de interação (parede, bola, próprio corpo) é visível.
+Número de agentes	Agente único	Não há oponente estratégico interferindo nas decisões.
+Previsibilidade	Determinístico	A parede reflete a bola de maneira previsível baseada na física do impacto.
+Dependência entre	Sequencial	Um erro mecânico na rebatida atual interrompeu o exercício (sequência contínua).
+Mudança durante a carteira	Dinâmico	O ambiente e a posição da bola mudam de forma contínua no tempo.
+tê dos elementos	Contínuo	Ângulos, velocidades e coordenadas espaciais são contínuos.
+Conhecimento do funcionamento	conhecido	As leis físicas que regem o rebote na parede são totalmente compreendidas.
+Caso 6 — Realizar um salto de altura.
+Agente aplicado: Atleta (humano ou robô)
+Objetivo e hipóteses: Ultrapassar a maior altura possível na barra sem derrubá-la; assume-se pista e equipamento padronizado.
+P — Medida de desempenho: Altura máxima do sarrafo ultrapassada com sucesso.
+E — Ambiente: Pista de atletismo, colchão de queda, varão e barra de salto.
+A — Atuadores: Musculatura das pernas, tronco e braços para impulsão e transposição.
+S — Sensores: Visão para balização da corrida e propriocepção corporal.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Completamente observável	A barra, a pista e a distância até o obstáculo estão totalmente visíveis.
+Número de agentes	Agente único	A execução física depende exclusivamente do desempenho isolado do atleta.
+Previsibilidade	Determinístico	A biomecânica do salto e a gravidade operam de forma previsível e constante.
+Dependência entre	Sequencial	A fase de aproximação (corrida) condiciona o impulso, que condiciona a curva de voo.
+Mudança durante a carteira	Dinâmico	O movimento ocorre em tempo real de forma fluida e rápida.
+tê dos elementos	Contínuo	Tempo, altura, velocidade de corrida e forças aplicadas são contínuas.
+Conhecimento do funcionamento	conhecido	A biomecânica e as leis da gravidade são conhecidas.
+Caso 7 — Participar de um leilão de um item, realizando lanças.
+Agente aplicado: Agente de gerenciamento automatizado (software de lances)
+Objetivo e hipóteses: Arrematar o item desejado pelo menor preço possível, abaixo de um teto orçamentário; assume-se leilão on-line padrão.
+P — Medida de desempenho: Obtenção do item e economia financeira em relação ao valor máximo estipulado.
+E — Ambiente: Plataforma de leilão online e concorrentes virtuais.
+A — Atuadores: Envio de valores de lances via interface web ou API.
+S — Sensores: Leitura de lanças atuais da página, cronômetro da sessão e status do leilão.
+Propriedade	Às vezes, ele é um dos seus maiores talentos.	Justificativa
+Observabilidade	Parcialmente observável	O orçamento máximo e a estratégia oculta dos outros licitantes não são totalmente visíveis.
+Número de agentes	Multiagente (competitivo)	Outros participantes disputaram o mesmo lote oferecendo lances concorrentes.
+Previsibilidade	Estocástico	O comportamento de lança de terceiros introduz incerteza sem resultado.
+Dependência entre	Sequencial	Os lances passados ​​influenciaram as reações dos concorrentes e definiram uma estratégia futura.
+Mudança durante a carteira	Semidinâmico	O tempo corre e o leilão avança, mas as decisões ocorrem em momentos discretos de envio de lanças.
+tê dos elementos	Discreto	Os valores monetários das lanças são finitos e segmentados em unidades discretas (centavos).
+Conhecimento do funcionamento	conhecido	As regras do leilão e os termos da plataforma são conhecidos.
+Comparação final
+O que é fácil entre jogar tênis contra outra pessoa e praticar contra uma parede? 2. Por que comprar livros usados ​​pode exigir decisões com informações incompletas?
+Como outros agentes influenciam o futebol e os leilões?
+Respostas:
+
+Contra outra pessoa, o ambiente é multiagente competitivo e estocástico, exigindo teoria da mente e estratégia adaptativa. Contra a parede, o ambiente é de agente único e determinístico, onde a resposta física é mecânica e previsível.
+Porque o estoque de sebos digitais é volátil e limitado; livros raros podem ser vendidos por concorrentes a qualquer segundo, e o estado real de conservação pode diferir da descrição.
+No futebol, os adversários atuam estrategicamente para bloquear e contra-atacar, exigindo cooperação e competição direta. Nos leilões, os concorrentes competem elevando os preços e alterando o valor esperado do item.
+Exercício 2.5
+Defina cada termo com suas palavras em duas a quatro linhas e apresente um exemplo.
+
+Agente
+Definição: Entidade autônoma capaz de perceber seu ambiente por meio de sensores e agir sobre ele utilizando atuadores para atingir objetivos específicos.
+Exemplo: Um robô aspirador que limpa a casa identificando sujeira pelos sensores e movendo-se pelas.
+função de agente
+Definição: Descrição abstratamente matemática que mapeia qualquer histórico de percepções possíveis para uma ação correspondente.
+Exemplo: Uma tabela de regras fixa que associa a percepção "sujo" à ação "ligar aspirador".
+Programa de agente
+Definição: Uma implementação concreta da função de agente realizada em uma arquitetura física para rodar o algoritmo de tomada de decisão.
+Exemplo: O código implementado no processador do robô aspirador que lê os dados do sensor a cada ciclo.
+Racionalidade
+Definição: Propriedade de agir de forma a maximizar o desempenho esperado com base nas percepções acumuladas e no conhecimento prévio do agente.
+Exemplo: Um termostato que liga o ar condicionado quando a temperatura está acima do limite configurada.
+Autonomia
+Definição: Grau de independência com que um agente opera, aprendendo e tomando decisões com base em suas próprias experiências em vez de depender exclusivamente de instruções pré-programadas.
+Exemplo: Um carro independente que decide desviar de um buraco novo na pista por conta própria.
+Agente reativo
+Definição: Agente que toma decisões com base na percepção atual, desconsiderando o histórico de percepções passadas.
+Exemplo: Um sensor de presença que acende a luz imediatamente para detectar movimento.
+Agente baseado em modelo
+Definição: Agente que mantém um estado interno para modelar aspectos do mundo que não estão visíveis no momento, compreendendo como o mundo funciona e evolui.
+Exemplo: Um robô aspirador que armazena internamente um mapa dos cômodos da casa já limpo.
+Agente baseado em objetivos
+Definição: Agente que utiliza informações sobre metas e objetivos desejados para selecionar ações que se aproximam do estado final almejado.
+Exemplo: Um aplicativo de GPS que calcula a rota ideal para chegar a um endereço específico.
+Agente baseado em utilidade
+Definição: Agente que mede o grau de sucesso ou felicidade (utilidade) de diferentes estados possíveis, escolhendo a ação que maximiza essa utilidade quando há múltiplos caminhos ou objetivos conflitantes.
+Exemplo: Um GPS que escolhe não apenas a rota mais curta, mas que equilibra menor tempo, menor custo e menor estresse.
+Agente com compreensão
+Definição: Agente dotado de capacidade para melhorar seu desempenho futuro a partir de experiências passadas e do feedback recebido do ambiente.
+Exemplo: Um algoritmo de recomendação de streaming que ajusta os filmes sugeridos conforme o histórico de visualizações anteriores.
+Síntese com autômatos
+Escolha um caso do item 2.4. Apresente três estados internos, três percepções, três ações e duas regras no formato estado atual + percepção → próximo estado e ação. Explique como os estados internos representam informações passadas e citam uma limitação de simplificação.
+
+Resposta:
+
+Caso escolhido: Caso 3 — Comprar livros usados ​​de IA na Internet.
+Estados internos:
+ProcurandoLivro
+LivroEncontradoNoPreço
+CompraFinalizada
+Percepções:
+PrecoAlto
+PrecoBom
+LivroEsgotado
+Ações:
+ContinuarBusca
+ExecutarCompra
+ReiniciarPesquisa
+—
+ProcurandoLivro+PrecoBom 
+→
+ LivroEncontradoNoPreçoeExecutarCompra
+LivroEncontradoNoPreço+LivroEsgotado 
+→
+ ProcurandoLivroeContinuarBusca
+Explicação: Os estados internos representam uma memória persistente da experiência passada, permitindo que o agente saiba em qual etapa do fluxo de compra ele se encontra.
+Limitação: A modelagem por automáticos finitos possui uma quantidade limitada de estados discretos, o que dificulta lidar com variáveis ​​contínuas complexas (como flutuações infinitas de preços em tempo real).
+Entrega e avaliação
+Confira: identificação; nove análises no item 2.3; sete casos completos no item 2.4; dez conceitos no item 2.5; sín
